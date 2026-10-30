@@ -1,0 +1,103 @@
+:root {
+  --fundo: #14122b;
+  --painel: #1f1c3f;
+  --texto: #ece9ff;
+  --suave: #a9a4d6;
+  --destaque: #ffd23f;
+  --acerto: #5eead4;
+  --erro: #ff6b8b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+
+.jogo {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem 1.75rem;
+  background: var(--painel);
+  border: 3px solid var(--destaque);
+  border-radius: 6px;
+  box-shadow: 8px 8px 0 var(--destaque);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 .5rem;
+  font-family: "Courier New", monospace;
+  font-size: 1.7rem;
+  letter-spacing: -.02em;
+  color: var(--destaque);
+}
+
+.intro { margin: 0 0 1.5rem; color: var(--suave); }
+
+input {
+  width: 100%;
+  padding: .8rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--texto);
+  background: var(--fundo);
+  border: 2px solid var(--suave);
+  border-radius: 4px;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--acerto);
+  outline-offset: 2px;
+}
+
+input:disabled { opacity: .5; }
+
+.botoes {
+  display: flex;
+  gap: .75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+button {
+  flex: 1;
+  padding: .8rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fundo);
+  background: var(--destaque);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform .1s;
+}
+
+button:hover:not(:disabled) { transform: translateY(-2px); }
+button:active:not(:disabled) { transform: translateY(0); }
+button:disabled { opacity: .4; cursor: not-allowed; }
+button[hidden] { display: none; }
+
+button.secundario {
+  color: var(--texto);
+  background: transparent;
+  border: 2px solid var(--suave);
+}
+
+.mensagem { min-height: 3rem; margin: 0 0 .5rem; font-size: 1.1rem; }
+.mensagem.dica { color: var(--destaque); }
+.mensagem.acerto { color: var(--acerto); font-weight: 700; }
+.mensagem.erro { color: var(--erro); }
+
+.tentativas { margin: 0; color: var(--suave); }
+
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Adivinhação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="jogo">
+    <h1>Jogo da Adivinhação</h1>
+    <p class="intro">Escolhi um número entre 1 e 100. Consegue descobrir qual é?</p>
+
+    <input type="number" id="palpite" min="1" max="100" placeholder="Seu palpite" autofocus>
+
+    <div class="botoes">
+      <button id="btn-chutar" type="button">Chutar</button>
+      <button id="btn-reiniciar" type="button" class="secundario" hidden>Jogar de novo</button>
+    </div>
+
+    <p id="mensagem" class="mensagem" aria-live="polite"></p>
+    <p id="tentativas" class="tentativas"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
